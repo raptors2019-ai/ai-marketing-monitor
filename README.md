@@ -1,36 +1,62 @@
-This is a [Next.js](https://nextjs.org) project bootstrapped with [`create-next-app`](https://nextjs.org/docs/app/api-reference/cli/create-next-app).
+# AI Marketing Intelligence Monitor
 
-## Getting Started
+A showcase project for Demand Spring that demonstrates AI + automation skills through a marketing intelligence monitoring tool.
 
-First, run the development server:
+## Features
 
-```bash
-npm run dev
-# or
-yarn dev
-# or
-pnpm dev
-# or
-bun dev
-```
+- **Multi-Source Aggregation**: Fetches from Reddit, Hacker News, Product Hunt
+- **AI-Powered Categorization**: Claude AI categorizes by use case, industry, tool category, maturity
+- **Intelligent Insights**: 2-3 sentence summaries for each post
+- **Relevance Scoring**: 1-10 B2B relevance scores for prioritization
+- **Real-Time Refresh**: Manual trigger for on-demand updates
 
-Open [http://localhost:3000](http://localhost:3000) with your browser to see the result.
+## Tech Stack
 
-You can start editing the page by modifying `app/page.tsx`. The page auto-updates as you edit the file.
+- Next.js 15 (App Router)
+- React 19
+- TypeScript
+- Supabase (PostgreSQL)
+- Anthropic Claude API (Sonnet 4.5)
+- Tailwind CSS
 
-This project uses [`next/font`](https://nextjs.org/docs/app/building-your-application/optimizing/fonts) to automatically optimize and load [Geist](https://vercel.com/font), a new font family for Vercel.
+## Setup
 
-## Learn More
+1. **Install dependencies:**
+   ```bash
+   npm install
+   ```
 
-To learn more about Next.js, take a look at the following resources:
+2. **Environment variables are already set up in `.env.local`**
 
-- [Next.js Documentation](https://nextjs.org/docs) - learn about Next.js features and API.
-- [Learn Next.js](https://nextjs.org/learn) - an interactive Next.js tutorial.
+3. **Run database migration:**
+   - Go to your Supabase project → SQL Editor
+   - Copy the contents of `supabase/migrations/001_create_feed_items.sql`
+   - Paste and click "Run"
 
-You can check out [the Next.js GitHub repository](https://github.com/vercel/next.js) - your feedback and contributions are welcome!
+4. **Start dev server:**
+   ```bash
+   npm run dev
+   ```
 
-## Deploy on Vercel
+5. **Visit http://localhost:3000**
+   - Landing page will show overview
+   - Click "View Dashboard"
+   - Click "Refresh Feed" to fetch and process content
 
-The easiest way to deploy your Next.js app is to use the [Vercel Platform](https://vercel.com/new?utm_medium=default-template&filter=next.js&utm_source=create-next-app&utm_campaign=create-next-app-readme) from the creators of Next.js.
+## Demo Flow
 
-Check out our [Next.js deployment documentation](https://nextjs.org/docs/app/building-your-application/deploying) for more details.
+1. **Landing Page**: Clean intro with CTA
+2. **Dashboard**: Click "Refresh Feed" button
+3. **Watch Processing**: Fetches posts from 3 sources → Claude categorizes → displays results
+4. **Explore Content**: View categorized posts with insights and relevance scores
+
+## Business Value for Demand Spring
+
+- **Stay Ahead**: Track AI marketing trends in real-time
+- **Client Intelligence**: Understand what B2B marketers are discussing
+- **Thought Leadership**: Identify emerging topics for content/services
+- **Competitive Research**: Monitor tool launches and trends
+
+## Credits
+
+Built by Joshua Singarayer for Demand Spring

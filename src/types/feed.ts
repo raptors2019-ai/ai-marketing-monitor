@@ -33,6 +33,7 @@ export interface RedditPost {
     author: string
     created_utc: number
     permalink: string
+    subreddit: string
   }
 }
 
